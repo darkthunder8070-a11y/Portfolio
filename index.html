@@ -1,472 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ===== CHANGE THIS: YOUR TITLE ===== -->
-    <title>YOUR NAME | YOUR APP NAME</title>
-    
-    <!-- SEO Meta Tags - CHANGE THESE -->
-    <meta name="description" content="YOUR NAME - Professional Portfolio by YOUR USERNAME">
-    <meta name="author" content="YOUR NAME">
-    <meta name="keywords" content="YOUR NAME, Portfolio, Developer, Designer, YOUR APP">
-    
-    <!-- Open Graph / Social Media Meta Tags - CHANGE THESE -->
-    <meta property="og:title" content="YOUR NAME | YOUR APP">
-    <meta property="og:description" content="Professional Portfolio showcasing creative work by YOUR NAME">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon (optional) -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarkThunder | Developer</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    
-    <!-- Loading Screen - CHANGE "RYNOX" to YOUR NAME -->
-    <div class="loader-wrapper">
-        <div class="loader">
-            <span>YOUR NAME</span>
-            <div class="loader-line"></div>
-        </div>
-    </div>
 
-    <!-- Animated Background -->
-    <div class="floating-shapes">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+<div id="particles-js"></div>
 
-    <!-- Particle Network Background -->
-    <canvas id="particle-canvas"></canvas>
+<header>
+<h1>DarkThunder</h1>
+<p>Discord Bot Developer | Minecraft Projects | Web Developer</p>
+</header>
 
-    <!-- Main Content -->
-    <div class="content">
-        <!-- Navigation - CHANGE BRAND NAME -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <span class="brand-text">YOUR NAME</span>
-                    <span class="brand-dot">.</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#work">Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="row align-items-center min-vh-100">
-                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
-                        
-                        <!-- ===== CHANGE THIS: Your Badge ===== -->
-                        <div class="profile-badge">
-                            <span class="badge-glow">⚡ YOUR USERNAME</span>
-                        </div>
-                        
-                        <div class="profile-img-wrapper">
-                            <div class="profile-img">
-                                <i class="fas fa-bolt"></i>
-                                <!-- OR if you want image: <img src="YOUR-IMAGE-LINK.jpg" alt="YOUR NAME"> -->
-                            </div>
-                            <div class="profile-ring"></div>
-                        </div>
+<section id="about">
 
-                        <!-- ===== CHANGE THIS: Your Main Name ===== -->
-                        <h1 class="display-1">
-                            <span class="glitch-text" data-text="YOUR NAME">YOUR NAME</span>
-                        </h1>
-                        
-                        <div class="typewriter-container">
-                            <span id="typewriter"></span>
-                        </div>
+<h2>About Me</h2>
 
-                        <!-- ===== CHANGE THIS: Your Tagline ===== -->
-                        <p class="lead-text" data-aos="fade-up" data-aos-delay="200">
-                            Crafting digital experiences with <span class="highlight">YOUR APP</span> creativity
-                        </p>
+<p>
+Hello! I'm a developer who builds Discord bots, Minecraft plugins,
+and web projects. I enjoy creating useful tools and cool designs.
+</p>
 
-                        <!-- CTA Buttons -->
-                        <div class="cta-group" data-aos="fade-up" data-aos-delay="400">
-                            <button class="btn-custom btn-thunder" onclick="viewWork()">
-                                <i class="fas fa-bolt me-2"></i>View Work
-                                <span class="btn-shine"></span>
-                            </button>
-                            
-                            <button class="btn-custom btn-outline-thunder" onclick="contactMe()">
-                                <i class="fas fa-cloud-bolt me-2"></i>Connect
-                                <span class="btn-border-animation"></span>
-                            </button>
-                        </div>
+</section>
 
-                        <!-- Social Links - CHANGE ALL LINKS AND USERNAMES -->
-                        <div class="social-links" data-aos="fade-up" data-aos-delay="600">
-                            <!-- ===== CHANGE DISCORD ===== -->
-                            <a href="YOUR-DISCORD-LINK" class="social-icon discord" title="Discord" target="_blank">
-                                <i class="fab fa-discord"></i>
-                                <span class="social-tooltip">YOUR-DISCORD-USERNAME</span>
-                            </a>
-                            
-                            <!-- ===== CHANGE GITHUB ===== -->
-                            <a href="YOUR-GITHUB-LINK" class="social-icon github" title="GitHub" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <span class="social-tooltip">YOUR-GITHUB</span>
-                            </a>
-                            
-                            <!-- ===== CHANGE LINKEDIN ===== -->
-                            <a href="YOUR-LINKEDIN-LINK" class="social-icon linkedin" title="LinkedIn" target="_blank">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span class="social-tooltip">YOUR-LINKEDIN</span>
-                            </a>
-                            
-                            <!-- ===== CHANGE INSTAGRAM ===== -->
-                            <a href="YOUR-INSTAGRAM-LINK" class="social-icon instagram" title="Instagram" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                                <span class="social-tooltip">YOUR-INSTAGRAM</span>
-                            </a>
-                            
-                            <!-- ===== CHANGE TWITTER ===== -->
-                            <a href="YOUR-TWITTER-LINK" class="social-icon twitter" title="Twitter" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                                <span class="social-tooltip">YOUR-TWITTER</span>
-                            </a>
-                        </div>
+<section id="projects">
 
-                        <!-- Scroll Indicator -->
-                        <div class="scroll-indicator">
-                            <div class="mouse"></div>
-                            <div class="arrow">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<h2>My Projects</h2>
 
-        <!-- Work Section -->
-        <section id="work" class="work-section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">My Creations</span>
-                    <h2 class="section-title">Featured Work</h2>
-                    <div class="title-underline"></div>
-                </div>
+<div class="projects">
 
-                <div class="row g-4">
-                    <!-- Project 1 - CHANGE THIS -->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <i class="fas fa-bolt fa-3x"></i>
-                                <!-- OR <img src="YOUR-PROJECT1-IMAGE.jpg" alt="Project 1"> -->
-                            </div>
-                            <div class="project-info">
-                                <h3>YOUR PROJECT 1 NAME</h3>
-                                <p>YOUR PROJECT 1 DESCRIPTION</p>
-                                <div class="project-tags">
-                                    <span>Tech 1</span>
-                                    <span>Tech 2</span>
-                                    <span>Tech 3</span>
-                                </div>
-                                <a href="YOUR-PROJECT1-LINK" class="project-link" target="_blank">
-                                    View Project <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+<div class="card">
+<h3>Modaxa Bot</h3>
+<p>Multipurpose Discord bot with moderation, music and utility commands.</p>
+</div>
 
-                    <!-- Project 2 - CHANGE THIS -->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <i class="fas fa-cloud-bolt fa-3x"></i>
-                            </div>
-                            <div class="project-info">
-                                <h3>YOUR PROJECT 2 NAME</h3>
-                                <p>YOUR PROJECT 2 DESCRIPTION</p>
-                                <div class="project-tags">
-                                    <span>Tech 1</span>
-                                    <span>Tech 2</span>
-                                    <span>Tech 3</span>
-                                </div>
-                                <a href="YOUR-PROJECT2-LINK" class="project-link" target="_blank">
-                                    View Project <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+<div class="card">
+<h3>Minecraft Cards Pack</h3>
+<p>Custom trading cards texture pack for Minecraft servers.</p>
+</div>
 
-                    <!-- Project 3 - CHANGE THIS -->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <i class="fas fa-crown fa-3x"></i>
-                            </div>
-                            <div class="project-info">
-                                <h3>YOUR PROJECT 3 NAME</h3>
-                                <p>YOUR PROJECT 3 DESCRIPTION</p>
-                                <div class="project-tags">
-                                    <span>Tech 1</span>
-                                    <span>Tech 2</span>
-                                    <span>Tech 3</span>
-                                </div>
-                                <a href="YOUR-PROJECT3-LINK" class="project-link" target="_blank">
-                                    View Project <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>My personal developer portfolio hosted online.</p>
+</div>
 
-                <!-- View All Button - CHANGE LINK -->
-                <div class="text-center mt-5" data-aos="fade-up">
-                    <a href="YOUR-ALL-PROJECTS-LINK" class="btn-custom btn-thunder-outline">
-                        View All Projects <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+</div>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="about-img-wrapper">
-                            <div class="about-img">
-                                <i class="fas fa-bolt fa-5x"></i>
-                                <!-- OR <img src="YOUR-PROFILE-IMAGE.jpg" alt="YOUR NAME"> -->
-                            </div>
-                            <!-- ===== CHANGE EXPERIENCE ===== -->
-                            <div class="experience-badge">
-                                <span class="years">YOUR YEARS+</span>
-                                <span class="text">Years of<br>Excellence</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="about-content">
-                            <span class="section-subtitle">About YOU</span>
-                            
-                            <!-- ===== CHANGE YOUR NAME ===== -->
-                            <h2>YOUR FULL NAME <span class="highlight">⚡</span></h2>
-                            
-                            <!-- ===== CHANGE YOUR BIO ===== -->
-                            <p class="about-text">
-                                YOUR BIOGRAPHY HERE - I'm a passionate developer who loves creating amazing digital experiences. 
-                                With expertise in modern web technologies, I transform ideas into reality with 
-                                creativity and precision.
-                            </p>
-                            
-                            <div class="skills">
-                                <!-- ===== CHANGE SKILLS AND PERCENTAGES ===== -->
-                                <div class="skill-item">
-                                    <span class="skill-name">YOUR SKILL 1</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 95%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">YOUR SKILL 2</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 88%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">YOUR SKILL 3</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 82%"></div>
-                                    </div>
-                                </div>
-                            </div>
+</section>
 
-                            <!-- ===== CHANGE STATS ===== -->
-                            <div class="stats">
-                                <div class="stat-item">
-                                    <span class="stat-number">YOUR+</span>
-                                    <span class="stat-label">Projects</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">YOUR+</span>
-                                    <span class="stat-label">Clients</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">YOUR+</span>
-                                    <span class="stat-label">Years</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="contact">
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">Get In Touch</span>
-                    <h2 class="section-title">Connect With Me</h2>
-                    <div class="title-underline"></div>
-                </div>
+<h2>Contact</h2>
 
-                <div class="row">
-                    <div class="col-lg-6 mx-auto" data-aos="fade-up">
-                        <div class="contact-card">
-                            
-                            <!-- ===== CHANGE DISCORD HIGHLIGHT ===== -->
-                            <div class="discord-highlight">
-                                <i class="fab fa-discord fa-3x"></i>
-                                <h3>YOUR-DISCORD-USERNAME</h3>
-                                <p>Add me on Discord for direct communication</p>
-                                <button class="btn-copy" onclick="copyDiscord()">
-                                    <i class="fas fa-copy me-2"></i>Copy Username
-                                </button>
-                            </div>
+<p>Discord: yourusername</p>
+<p>Email: your@email.com</p>
 
-                            <div class="contact-info">
-                                <!-- ===== CHANGE EMAIL ===== -->
-                                <div class="info-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <div>
-                                        <h4>Email</h4>
-                                        <a href="mailto:YOUR-EMAIL@domain.com">YOUR-EMAIL@domain.com</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- ===== CHANGE PHONE ===== -->
-                                <div class="info-item">
-                                    <i class="fas fa-phone"></i>
-                                    <div>
-                                        <h4>Phone</h4>
-                                        <a href="tel:+YOUR-PHONE-NUMBER">+YOUR PHONE NUMBER</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- ===== CHANGE LOCATION ===== -->
-                                <div class="info-item">
-                                    <i class="fas fa-location-dot"></i>
-                                    <div>
-                                        <h4>Location</h4>
-                                        <p>YOUR CITY, COUNTRY</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+</section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <span class="brand-text">YOUR NAME</span>
-                        <span class="brand-dot">.</span>
-                    </div>
-                    <div class="footer-copyright">
-                        <p>&copy; 2024 YOUR NAME. All rights reserved.</p>
-                    </div>
-                    <div class="footer-links">
-                        <a href="YOUR-PRIVACY-POLICY-LINK">Privacy</a>
-                        <a href="YOUR-TERMS-LINK">Terms</a>
-                        <a href="#">Sitemap</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+<footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
-    
-    <script>
-        // Initialize AOS
-        AOS.init();
-        
-        // Typed.js initialization - CHANGE THESE TEXTS
-        new Typed('#typewriter', {
-            strings: [
-                'YOUR TITLE 1',
-                'YOUR TITLE 2', 
-                'YOUR TITLE 3',
-                'YOUR USERNAME ⚡'
-            ],
-            typeSpeed: 100,
-            backSpeed: 60,
-            loop: true
-        });
-        
-        // Copy Discord function
-        function copyDiscord() {
-            // ===== CHANGE THIS TO YOUR DISCORD USERNAME =====
-            const discordUsername = "dark.thunder.ly"        
-            navigator.clipboard.writeText(discordUsername.then(() => {
-                alert("Discord username copied! ✅");
-            }).catch(err => {
-                console.error("Failed to copy:", err);
-            });
-        }
-        
-        // Navigation functions
-        function viewWork() {
-            document.querySelector('#work').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function contactMe() {
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Remove loader after page load
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.querySelector('.loader-wrapper').style.display = 'none';
-            }, 2000);
-        });
-    </script>
+<p>© 2026 DarkThunder | Portfolio</p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="script.js"></script>
+
 </body>
-            </html>
+</html>
