@@ -3,16 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Portfolio</title>
+    <title>Rynox | Dark.Thunder.Ly</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Rynox - Professional Portfolio by Dark.Thunder.Ly">
+    <meta name="author" content="Dark.Thunder.Ly">
+    <meta name="keywords" content="Rynox, Portfolio, Developer, Designer, Dark.Thunder.Ly">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Rynox | Dark.Thunder.Ly">
+    <meta property="og:description" content="Professional Portfolio showcasing creative work">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon (optional) -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- External CSS -->
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated floating shapes -->
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <span>RYNOX</span>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
     <div class="floating-shapes">
         <div></div>
         <div></div>
@@ -20,51 +47,345 @@
         <div></div>
         <div></div>
         <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <!-- Main content -->
+    <!-- Particle Network Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Content -->
     <div class="content">
-        <div class="portfolio-card text-center">
-            <div class="profile-img">
-                <i class="fas fa-code"></i>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <span class="brand-text">RYNOX</span>
+                    <span class="brand-dot">.</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
-            <h1>John Doe</h1>
-            <div class="typing-text">Full Stack Developer</div>
-            
-            <p class="mb-4">
-                I create amazing web experiences with modern technologies.
-                Let's build something awesome together!
-            </p>
+        </nav>
 
-            <!-- Animated Buttons -->
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <button class="btn-custom btn-gradient">
-                    <i class="fas fa-rocket me-2"></i>Hire Me
-                </button>
-                
-                <button class="btn-custom btn-border-pulse">
-                    <i class="fas fa-download me-2"></i>Resume
-                </button>
-                
-                <button class="btn-custom btn-3d">
-                    <span>CLICK ME</span>
-                </button>
-            </div>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="profile-badge">
+                            <span class="badge-glow">⚡ Dark.Thunder.Ly</span>
+                        </div>
+                        
+                        <div class="profile-img-wrapper">
+                            <div class="profile-img">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="profile-ring"></div>
+                        </div>
 
-            <!-- Social Links -->
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <h1 class="display-1">
+                            <span class="glitch-text" data-text="RYNOX">RYNOX</span>
+                        </h1>
+                        
+                        <div class="typewriter-container">
+                            <span id="typewriter"></span>
+                        </div>
+
+                        <p class="lead-text" data-aos="fade-up" data-aos-delay="200">
+                            Crafting digital experiences with <span class="highlight">thunderous</span> creativity
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="cta-group" data-aos="fade-up" data-aos-delay="400">
+                            <button class="btn-custom btn-thunder" onclick="viewWork()">
+                                <i class="fas fa-bolt me-2"></i>View Work
+                                <span class="btn-shine"></span>
+                            </button>
+                            
+                            <button class="btn-custom btn-outline-thunder" onclick="contactMe()">
+                                <i class="fas fa-cloud-bolt me-2"></i>Connect
+                                <span class="btn-border-animation"></span>
+                            </button>
+                        </div>
+
+                        <!-- Social Links with Discord Highlight -->
+                        <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                            <a href="#" class="social-icon discord" title="Discord">
+                                <i class="fab fa-discord"></i>
+                                <span class="social-tooltip">dark.thunder.ly</span>
+                            </a>
+                            <a href="#" class="social-icon github" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon linkedin" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon instagram" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+
+                        <!-- Scroll Indicator -->
+                        <div class="scroll-indicator">
+                            <div class="mouse"></div>
+                            <div class="arrow">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="work-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">My Creations</span>
+                    <h2 class="section-title">Featured Work</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Project 1 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-bolt fa-3x"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Thunder Project</h3>
+                                <p>Modern web application with lightning speed</p>
+                                <div class="project-tags">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                </div>
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-cloud-bolt fa-3x"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Dark Theme UI</h3>
+                                <p>Elegant dark mode design system</p>
+                                <div class="project-tags">
+                                    <span>Figma</span>
+                                    <span>Adobe XD</span>
+                                    <span>CSS3</span>
+                                </div>
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-crown fa-3x"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3>Rynox Studio</h3>
+                                <p>Creative portfolio template</p>
+                                <div class="project-tags">
+                                    <span>HTML5</span>
+                                    <span>SCSS</span>
+                                    <span>JS</span>
+                                </div>
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Button -->
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <button class="btn-custom btn-thunder-outline">
+                        View All Projects <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="about-img-wrapper">
+                            <div class="about-img">
+                                <i class="fas fa-bolt fa-5x"></i>
+                            </div>
+                            <div class="experience-badge">
+                                <span class="years">2+</span>
+                                <span class="text">Years of<br>Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="about-content">
+                            <span class="section-subtitle">About Rynox</span>
+                            <h2>Dark.Thunder.Ly <span class="highlight">⚡</span></h2>
+                            <p class="about-text">
+                                I'm a passionate developer who loves creating thunderous digital experiences. 
+                                With expertise in modern web technologies, I transform ideas into reality with 
+                                creativity and precision.
+                            </p>
+                            
+                            <div class="skills">
+                                <div class="skill-item">
+                                    <span class="skill-name">Frontend Development</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">UI/UX Design</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Backend Development</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 82%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">30+</span>
+                                    <span class="stat-label">Clients</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">2+</span>
+                                    <span class="stat-label">Years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Connect With Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mx-auto" data-aos="fade-up">
+                        <div class="contact-card">
+                            <div class="discord-highlight">
+                                <i class="fab fa-discord fa-3x"></i>
+                                <h3>dark.thunder.ly</h3>
+                                <p>Add me on Discord for direct communication</p>
+                                <button class="btn-copy" onclick="copyDiscord()">
+                                    <i class="fas fa-copy me-2"></i>Copy Username
+                                </button>
+                            </div>
+
+                            <div class="contact-info">
+                                <div class="info-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <a href="mailto:rynox@darkthunder.ly">rynox@darkthunder.ly</a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <h4>Phone</h4>
+                                        <a href="tel:+1234567890">+1 234 567 890</a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-location-dot"></i>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <p>Global - Remote</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="brand-text">RYNOX</span>
+                        <span class="brand-dot">.</span>
+                    </div>
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Dark.Thunder.Ly. All rights reserved.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- External JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
 </body>
-                      </html>
+                            </html>
